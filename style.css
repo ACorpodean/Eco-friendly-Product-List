@@ -12,3 +12,14 @@ table th {
     background-color: #00aeef;
     color: white;
 }
+
+button {
+    padding: 0 2px;
+}
+ 
+button[type=submit]{
+    color: green;
+}
+button[type=reset]{
+    color: blue;
+}
