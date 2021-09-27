@@ -11,7 +11,7 @@
 ## TODO
 - [ ] create a table in HTML
 - [ ] design and structure in CSS
-- [ ] table headers-[Product Name, Weight, Expiration Date, Amount]
+- [ ] table headers-[Product Name, Weight, Expiration Date, Price]
 - [ ] add a JSON file with products
 - [ ] add a JSON file with recipes
 
@@ -21,6 +21,6 @@
 
 - [ ] Main screen displaying all products, those that are soon to expire having a red background
 - [ ] Search for products
-- [ ] Add Product with name, weight, date, amount 
+- [ ] Add Product with name, weight, date, price 
 - [ ] Delete button
 - [ ] Edit button
