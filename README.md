@@ -1,4 +1,4 @@
-# Eco-friendly-Product-List
+# Food Waste Planner
 
 ## Team
 - [Ichim Maximilian](https://github.com/max-anchidin/)
