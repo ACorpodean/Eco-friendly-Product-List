@@ -22,3 +22,4 @@
 - [ ] Main screen appearing with all Products , those that expire in red background
 - [ ] Search for products
 - [ ] Add Product with name, weight, date, amount 
+- [ ] Add/Delete button
