@@ -1,9 +1,9 @@
 # Eco-friendly-Product-List
 
 ## Team
-- [Ichim Maximilian](https://github.com/ )
+- [Ichim Maximilian](https://github.com/max-anchidin/)
 - [Corpodean Andrei](https://github.com/ACorpodean)
-- [Chișiu Ionuț](https://github.com/ )
+- [Chișiu Ionuț](https://github.com/IonussCh)
 
 ## Live Preview
 - [Demo](https://github.com/ACorpodean/Eco-friendly-Product-List/)
