@@ -6,41 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Waste Planner</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <h1>Food Waste Planner</h1>
-
-    <table>
-        <thead>
-            <th>Product Name</th>
-            <th>Expiration Date</th>
-            <th>Weight</th>
-            <th>Price</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tăiței</td>
-                <td>28.09.2021</td>
-                <td>100g</td>
-                <td>12 RON</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td><input type="text" required name="Name" placeholder="Name"></td>
-                <td><input type="text" required name="Exp.date" placeholder="Exp.Date"></td>
-                <td><input type="text" required name="kg" placeholder="Kg"></td>
-                <td><input type="text" required name="Price" placeholder="Price"></td>
-                <td>
-                    <button type="submit"><i class="fas fa-save"></i></button>
-                    <button type="reset"><i class="fas fa-undo"></i></button></i>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+    <div class="container-lg d-flex flex-column">
+        <h1 class="display-2">Food Waste Planner</h1>
+        <table class="table text-light table-hover">
+            <thead>
+                <th>Product Name</th>
+                <th>Expiration Date</th>
+                <th>Weight</th>
+                <th>Price</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tăiței</td>
+                    <td>28.09.2021</td>
+                    <td>100g</td>
+                    <td>12 RON</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tăiței</td>
+                    <td>28.09.2021</td>
+                    <td>100g</td>
+                    <td>12 RON</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tăiței</td>
+                    <td>28.09.2021</td>
+                    <td>100g</td>
+                    <td>12 RON</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tăiței</td>
+                    <td>28.09.2021</td>
+                    <td>100g</td>
+                    <td>12 RON</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input type="text" required name="name" placeholder="Product Name"></td>
+                    <td><input type="text" required name="exp-date" placeholder="Expiration Date"></td>
+                    <td><input type="text" required name="weight" placeholder="Weight"></td>
+                    <td><input type="text" required name="price" placeholder="Price"></td>
+                    <td>
+                        <button type="submit"><i class="fas fa-save"></i></button>
+                        <button type="reset"><i class="fas fa-undo"></i></button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
     <script src="functions.js"></script>
 </body>
 
