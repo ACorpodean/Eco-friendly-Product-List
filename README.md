@@ -6,7 +6,7 @@
 - [Chișiu Ionuț](https://github.com/IonussCh)
 
 ## Live Preview
-- [Demo](https://github.com/ACorpodean/Eco-friendly-Product-List/)
+- [Demo](https://acorpodean.github.io/Food-Waste-Planner/)
 
 ## TODO
 - [ ] create a table in HTML
