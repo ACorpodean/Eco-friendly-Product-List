@@ -7,19 +7,22 @@ body {
     align-items: center;
     height: 100%;
     background: #67B26F;  /* fallback for old browsers */
-    background: -webkit-linear-gradient( #67B26F, #4ca2cd);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(#67B26F, #e4f1f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient( #67B26F, #b6d3e0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#67B26F, #b6d3e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+.logo {
+    max-width: 30em;
+}
 
-h1 {
+/* h1 {
     text-align: center;
     color: white;
     font-weight: bolder;
     margin-bottom: 4rem;
-}
+} */
 
 thead, tbody, tfoot {
     text-align: center;
@@ -29,6 +32,3 @@ thead, tbody, tfoot {
 thead {
     font-size: 1.3rem;
 }
-
-
-
