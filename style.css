@@ -4,15 +4,32 @@ html {
 
 body {
     height: 100%;
-    background: #67B26F;  /* fallback for old browsers */
-    background: -webkit-linear-gradient( #67B26F, #b6d3e0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(#67B26F, #b6d3e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #60c5c0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient( #60c5c0, #699b40);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#05a396, #699b40); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+body::after{
+  content: "";
+  background: url(background_image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  max-width: 100%;
+  z-index: -1;   
+}
+
 .logo {
     max-width: 30em;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 /* h1 {
@@ -101,5 +118,6 @@ thead {
     .logo {
       max-width: 75%;
   }
+
 
     }
