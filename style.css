@@ -119,5 +119,17 @@ thead {
       max-width: 75%;
   }
 
+  tfoot tr td:last-child{
+    border-bottom: none;
 
-    }
+  }
+}
+
+@media only screen and (min-width: 1001px){
+
+tfoot tr td:nth-last-child(1n){
+  border-bottom: none;
+  }
+
+}
+
