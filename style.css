@@ -3,8 +3,6 @@ html {
 }
 
 body {
-    display: flex;
-    align-items: center;
     height: 100%;
     background: #67B26F;  /* fallback for old browsers */
     background: -webkit-linear-gradient( #67B26F, #b6d3e0);  /* Chrome 10-25, Safari 5.1-6 */
@@ -99,6 +97,10 @@ thead {
     thead td, tbody td:last-child {
         display: none;
     }
+
+    .logo {
+      max-width: 100%;
+  }
 
     }
 
