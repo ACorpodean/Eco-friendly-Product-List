@@ -12,9 +12,9 @@ function loadProductList() {
 function displayProductList(p) {
   const html = p
     .map((prod) => {
-      // console.info(typeof prod.expiration);
-      // console.warn(typeof prod.weight);
-      // console.error(typeof prod.price);
+      console.info(typeof prod.expiration);
+      console.warn(typeof prod.weight);
+      console.error(typeof prod.price);
       return `<tr>
         <td>${prod.product}</td>
         <td>${prod.expiration}</td>
