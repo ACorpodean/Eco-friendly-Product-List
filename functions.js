@@ -19,7 +19,7 @@ function displayProductList(p) {
         <td>${prod.price} RON</td>
         <td></td>
       </tr>`
-    });
+    }).join(" ");
   document.querySelector('tbody').innerHTML = html;
 };
 
