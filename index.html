@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Waste Planner</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="bootstrap-5.1.1-dist/css/bootstrap-grid.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
     <script src="fontawesome/a076d05399.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container-lg d-flex flex-column">
-        <div class="container-log d-flex justify-content-center">
-            <img src="logo.png" alt="logo" class="img-fluid logo">
-        </div>
-        <table class="table text-light table-hover responsive">
-            <thead>
-                <th>Product Name</th>
-                <th>Expiration Date</th>
-                <th>Weight</th>
-                <th>Price</th>
-                <th></th>
-            </thead>
-            <tbody>
-               
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td><input type="text" required name="name" placeholder="Product Name"></td>
-                    <td><input type="date" required name="exp-date" placeholder="Expiration Date"></td>
-                    <td><input type="text" required name="weight" placeholder="Weight"></td>
-                    <td><input type="text" required name="price" placeholder="Price"></td>
-                    <td>
-                        <button type="submit"><i class="fas fa-save"></i></button>
-                        <button type="reset"><i class="fas fa-undo"></i></button>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
+      <div class="container-log d-flex justify-content-center">
+        <img src="logo.png" alt="logo" class="img-fluid logo" />
+      </div>
+      <table class="table text-light table-hover responsive">
+        <thead>
+          <th>Product Name</th>
+          <th>Expiration Date</th>
+          <th>Weight</th>
+          <th>Price</th>
+          <th></th>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <input
+                type="text"
+                required
+                name="name"
+                placeholder="Product Name"
+              />
+            </td>
+            <td>
+              <input
+                type="date"
+                required
+                name="exp-date"
+                placeholder="Expiration Date"
+              />
+            </td>
+            <td>
+              <input type="text" required name="weight" placeholder="Weight" />
+            </td>
+            <td>
+              <input type="text" required name="price" placeholder="Price" />
+            </td>
+            <td>
+              <button type="submit"><i class="fas fa-save"></i></button>
+              <button type="reset"><i class="fas fa-undo"></i></button>
+              <button type="button"><i id = "Searchbutton" class="fas fa-search"><i></i></button>
+              <input type="text" id="searchinput" required name="search" placeholder="Search" />
+            </td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
     <script src="functions.js"></script>
-</body>
-
+  </body>
 </html>
