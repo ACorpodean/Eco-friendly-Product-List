@@ -38,6 +38,6 @@ function searchProductNames() {
   });
   displayProductList(filtered);
 }
-document.getElementById("Searchbutton").addEventListener("click", (e) => {
+document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
