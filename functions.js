@@ -1,7 +1,7 @@
 let productList = [];
 
 function loadProductList() {
-  fetch("data/products.json")
+  fetch("http://localhost:3000/products-json")
     .then((r) => r.json())
     .then((products) => {
       productList = products;
@@ -42,13 +42,20 @@ function getProductValuesAsJson() {
 }
 
 function saveProduct(product) {
-  fetch("data/add-product.json", {
+  fetch("http://localhost:3000/products-json/create", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(product)
   })
   .then(r=> r.json())
   .then(status => {
     console.warn("status", status);
+    if (status.success) {
+      loadProductList();
+      document.querySelector('form').reset();
+    }
   })
 }
 
