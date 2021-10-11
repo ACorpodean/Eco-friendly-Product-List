@@ -1,7 +1,7 @@
 let productList = [];
 
 function loadProductList() {
-  fetch("products.json")
+  fetch("data/products.json")
     .then((r) => r.json())
     .then((products) => {
       productList = products;
@@ -26,6 +26,38 @@ function displayProductList(products) {
     .join(" ");
   document.querySelector("tbody").innerHTML = html;
 }
+
+function getProductValuesAsJson() {
+  const name = document.querySelector('[name=name]').value;
+  const expiration = document.querySelector('[name=exp-date]').value;
+  const weight = document.querySelector('[name=weight]').value;
+  const price = document.querySelector('[name=price]').value;
+
+  return {
+    name: name,
+    expiration: expiration,
+    weight: weight,
+    price: price
+  };
+}
+
+function saveProduct(product) {
+  fetch("data/add-product.json", {
+    method: "POST",
+    body: JSON.stringify(product)
+  })
+  .then(r=> r.json())
+  .then(status => {
+    console.warn("status", status);
+  })
+}
+
+function submitProduct() {
+  const product = getProductValuesAsJson();
+  console.warn(JSON.stringify(product));
+  saveProduct(product);
+}
+
 
 loadProductList();
 
