@@ -12,15 +12,18 @@ function loadProductList() {
 function displayProductList(products) {
   const html = products
     .map((prod) => {
-      console.info(typeof prod.expiration);
-      console.warn(typeof prod.weight);
-      console.error(typeof prod.price);
+      // console.info(typeof prod.expiration);
+      // console.warn(typeof prod.weight);
+      // console.error(typeof prod.price);
       return `<tr>
         <td>${prod.name}</td>
         <td>${prod.expiration}</td>
         <td>${prod.weight} g</td>
         <td>${prod.price} RON</td>
-        <td>..</td>
+        <td>
+          <a href="#" class="delete-b" data-id="${prod.id}">&#10006;</a>
+          <a href="#" class="edit-b">&#9998;</a>
+        </td>
       </tr>`;
     })
     .join(" ");
@@ -61,12 +64,8 @@ function saveProduct(product) {
 
 function submitProduct() {
   const product = getProductValuesAsJson();
-  console.warn(JSON.stringify(product));
   saveProduct(product);
 }
-
-
-loadProductList();
 
 function searchProductNames() {
   const input = document.getElementById("searchinput");
@@ -80,3 +79,30 @@ function searchProductNames() {
 document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
+
+loadProductList();
+
+function deleteTeam(id) {
+  fetch("http://localhost:3000/products-json/delete", {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ id: id })
+})
+.then(r=> r.json())
+.then(status => {
+  console.warn("status", status);
+  if (status.success) {
+    loadProductList();
+  }
+})
+}
+
+document.querySelector('#productList tbody').addEventListener("click", e=> {
+  if (e.target.matches("a.delete-b")) {
+    const id = e.target.getAttribute("data-id");
+    deleteTeam(id);
+  }
+});
+
