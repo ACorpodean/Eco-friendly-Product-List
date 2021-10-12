@@ -22,7 +22,7 @@ function displayProductList(products) {
         <td>${prod.price} RON</td>
         <td>
           <a href="#" class="delete-b" data-id="${prod.id}">&#10006;</a>
-          <a href="#" class="edit-b">&#9998;</a>
+          <a href="#" class="edit-b" data-id="${prod.id}">&#9998;</a>
         </td>
       </tr>`;
     })
@@ -45,7 +45,7 @@ function getProductValuesAsJson() {
 }
 
 function saveProduct(product) {
-  fetch("http://localhost:3000/products-db/create", {
+  fetch("http://localhost:3000/products/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -83,7 +83,7 @@ document.getElementById("searchbutton").addEventListener("click", (e) => {
 loadProductList();
 
 function deleteTeam(id) {
-  fetch("http://localhost:3000/products-json/delete", {
+  fetch("http://localhost:3000/products/delete", {
   method: "DELETE",
   headers: {
     "Content-Type": "application/json"
@@ -106,3 +106,16 @@ document.querySelector('#productList tbody').addEventListener("click", e=> {
   }
 });
 
+document.querySelector('#productList tbody').addEventListener("click", e=> {
+  if (e.target.matches("a.edit-b")) {
+    const id = e.target.getAttribute("data-id");
+    //to add update function with id param
+  }
+});
+
+// to make update function
+//to rename functions to suit project
+//database search function
+//database  -api functionality 
+//interface work / interface api
+//check products expired
