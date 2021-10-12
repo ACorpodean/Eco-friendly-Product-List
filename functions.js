@@ -1,7 +1,7 @@
 let productList = [];
 
 function loadProductList() {
-  fetch("http://localhost:3000/products-json")
+  fetch("http://localhost:3000/products")
     .then((r) => r.json())
     .then((products) => {
       productList = products;
@@ -45,7 +45,7 @@ function getProductValuesAsJson() {
 }
 
 function saveProduct(product) {
-  fetch("http://localhost:3000/products-json/create", {
+  fetch("http://localhost:3000/products-db/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
