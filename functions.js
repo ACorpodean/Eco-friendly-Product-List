@@ -7,6 +7,7 @@ function loadProductList() {
     .then((products) => {
       productList = products;
       displayProductList(products);
+      document.getElementById("showExpired_All").innerHTML = '<button type="buttons"><i id="showExpired" class="expiredBtn">EXPIRED</i></button>';
     });
 }
 
@@ -16,6 +17,7 @@ function loadExpiredProductList() {
     .then((products) => {
       expiredList = products;
       displayProductList(products);
+      document.getElementById("showExpired_All").innerHTML = '<button type="buttons"><i id="showAll" class="allBtn">SHOW ALL</i></button>';
     });
 }
 
@@ -90,7 +92,7 @@ document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
 
-loadProductList();
+// loadProductList();
 
 function deleteTeam(id) {
   fetch("http://localhost:3000/products/delete", {
@@ -123,6 +125,16 @@ document.querySelector('#productList tbody').addEventListener("click", e=> {
   }
 });
 
+document.getElementById("showExpired_All").addEventListener("click", e=> {
+  if (e.target.matches("i#showExpired.expiredBtn")) {
+    loadExpiredProductList();
+  } else
+  if (e.target.matches("i#showAll.allBtn")) {
+    loadProductList();
+  }
+})
+
+loadProductList();
 
 // to make update function
 //to rename functions to suit project
