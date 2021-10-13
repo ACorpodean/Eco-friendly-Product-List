@@ -1,10 +1,20 @@
 let productList = [];
+let expiredList = [];
 
 function loadProductList() {
   fetch("http://localhost:3000/products")
     .then((r) => r.json())
     .then((products) => {
       productList = products;
+      displayProductList(products);
+    });
+}
+
+function loadExpiredProductList() {
+  fetch("http://localhost:3000/products/expired")
+    .then((r) => r.json())
+    .then((products) => {
+      expiredList = products;
       displayProductList(products);
     });
 }
@@ -112,6 +122,7 @@ document.querySelector('#productList tbody').addEventListener("click", e=> {
     //to add update function with id param
   }
 });
+
 
 // to make update function
 //to rename functions to suit project
