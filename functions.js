@@ -11,10 +11,11 @@ const API = {
 // for GitHub
 if (location.host === "acorpodean.github.io") {
   API.READ.URL = "data/products.json";
+  API.READ.METHOD = "GET";
 }
 
 function loadProductList() {
-  fetch("http://localhost:3000/products")
+  fetch(API.READ.URL)
     .then((r) => r.json())
     .then((products) => {
       productList = products;
