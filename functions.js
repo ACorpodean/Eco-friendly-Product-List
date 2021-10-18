@@ -11,7 +11,6 @@ const API = {
 // for GitHub
 if (location.host === "acorpodean.github.io") {
   API.READ.URL = "data/products.json";
-  API.READ.METHOD = "GET";
 }
 
 function loadProductList() {
@@ -25,7 +24,7 @@ function loadProductList() {
 }
 
 function loadExpiredProductList() {
-  fetch("http://localhost:3000/products/expired")
+  fetch(API.READ.URL)
     .then((r) => r.json())
     .then((products) => {
       expiredList = products;
