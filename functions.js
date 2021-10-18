@@ -2,15 +2,38 @@ let productList = [];
 let expiredList = [];
 
 const API = {
+  CREATE: {
+    URL: "http://localhost:3000/products/create",
+    METHOD: "POST"
+  },
   READ: {
     URL: "http://localhost:3000/products",
     METHOD: "GET"
+  },
+  UPDATE: {
+    URL: "http://localhost:3000/products/update",
+    METHOD: "PUT"
+  },
+  DELETE: {
+    URL: "http://localhost:3000/products/delete",
+    METHOD: "DELETE"
   }
 };
 
-// for GitHub
+let editId;
+const membersBreak = ", "; // "<br>"
+
+// for demo purposes...
 if (location.host === "acorpodean.github.io") {
   API.READ.URL = "data/products.json";
+  API.DELETE.URL = "data/delete.json";
+  API.CREATE.URL = "data/create.json";
+  API.UPDATE.URL = "data/update.json";
+
+  API.READ.METHOD = "GET";
+  API.DELETE.METHOD = "GET";
+  API.CREATE.METHOD = "GET";
+  API.UPDATE.METHOD = "GET";
 }
 
 function loadProductList() {
@@ -69,8 +92,8 @@ function getProductValuesAsJson() {
 }
 
 function saveProduct(product) {
-  fetch("http://localhost:3000/products/create", {
-    method: "POST",
+  fetch(API.CREATE.URL, {
+    method: API.CREATE.METHOD,
     headers: {
       "Content-Type": "application/json"
     },
@@ -107,8 +130,8 @@ document.getElementById("searchbutton").addEventListener("click", (e) => {
 // loadProductList();
 
 function deleteTeam(id) {
-  fetch("http://localhost:3000/products/delete", {
-    method: "DELETE",
+  fetch(API.DELETE.URL, {
+    method: API.DELETE.METHOD,
     headers: {
       "Content-Type": "application/json"
     },
