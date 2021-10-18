@@ -20,12 +20,9 @@ const API = {
   },
   EXPIRED: {
     URL: "http://localhost:3000/products/expired",
-    METHOD: "EXPIRED"
+    METHOD: "GET"
   }
 };
-
-let editId;
-const membersBreak = ", "; // "<br>"
 
 // for demo purposes...
 if (location.host === "acorpodean.github.io") {
