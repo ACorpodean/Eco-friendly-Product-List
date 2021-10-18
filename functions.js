@@ -9,7 +9,7 @@ const API = {
 };
 
 // for GitHub
-if (location.host === "acorpodean.github.io/") {
+if (location.host === "acorpodean.github.io") {
   API.READ.URL = "data/products.json";
 }
 
