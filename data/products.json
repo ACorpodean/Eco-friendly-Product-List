@@ -1,8 +1,23 @@
 [
-    {"name" : "Varza" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"},
-    {"name" : "Ardei" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"},
-    {"name" : "Urzica" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"},
-    {"name" : "Clepci" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"},
-    {"name" : "Turmeric" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"},
-    {"name" : "Paprica" , "expiration" : "11.11.2011" , "weight" : "100" , "price" : "5"}
+    {
+        "id": 1,
+        "name": "Varza",
+        "expiration": "10-16-2021",
+        "weight": "34",
+        "price": "45"
+    },
+    {
+        "id": 2,
+        "name": "Castravete",
+        "expiration": "10-22-2021",
+        "weight": "20",
+        "price": "70"
+    },
+    {
+        "id": 3,
+        "name": "Rosie",
+        "expiration": "06-02-2021",
+        "weight": "70",
+        "price": "3"
+    }
 ]
