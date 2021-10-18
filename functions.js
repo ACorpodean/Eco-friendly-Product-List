@@ -17,6 +17,10 @@ const API = {
   DELETE: {
     URL: "http://localhost:3000/products/delete",
     METHOD: "DELETE"
+  },
+  EXPIRED: {
+    URL: "http://localhost:3000/products/expired",
+    METHOD: "EXPIRED"
   }
 };
 
@@ -29,11 +33,13 @@ if (location.host === "acorpodean.github.io") {
   API.DELETE.URL = "data/delete.json";
   API.CREATE.URL = "data/create.json";
   API.UPDATE.URL = "data/update.json";
+  API.EXPIRED.URL = "data/expired.json"
 
   API.READ.METHOD = "GET";
   API.DELETE.METHOD = "GET";
   API.CREATE.METHOD = "GET";
   API.UPDATE.METHOD = "GET";
+  API.EXPIRED.METHOD = "GET";
 }
 
 function loadProductList() {
@@ -47,7 +53,7 @@ function loadProductList() {
 }
 
 function loadExpiredProductList() {
-  fetch(API.READ.URL)
+  fetch(API.EXPIRED.URL)
     .then((r) => r.json())
     .then((products) => {
       expiredList = products;
