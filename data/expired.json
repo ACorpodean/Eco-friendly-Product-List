@@ -1,0 +1,5 @@
+[{"id":7,"name":"varza","expiration":"10-11-2021","expired":1,"weight":"3500","price":"12"},
+    {"id":8,"name":"ardei","expiration":"10-07-2021","expired":1,"weight":"1000","price":"7"},
+    {"id":10,"name":"mazare","expiration":"10-03-2021","expired":1,"weight":"1000","price":"12"},
+    {"id":12,"name":"rosii","expiration":"09-28-2021","expired":1,"weight":"1000","price":"5"}
+]
