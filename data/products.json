@@ -19,5 +19,12 @@
         "expiration": "06-02-2021",
         "weight": "70",
         "price": "3"
+    },
+    {
+        "id": 4,
+        "name": "Ridichi",
+        "expiration": "25-11-2021",
+        "weight": "70",
+        "price": "10"
     }
 ]
