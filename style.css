@@ -132,3 +132,8 @@ tfoot tr td:nth-last-child(1n){
   }
 
 }
+
+
+#warning {
+  background-color: red;
+}

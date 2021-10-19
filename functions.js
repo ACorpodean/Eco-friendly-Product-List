@@ -1,5 +1,4 @@
 let productList = [];
-let expiredList = [];
 
 const API = {
   CREATE: {
@@ -30,7 +29,7 @@ if (location.host === "acorpodean.github.io") {
   API.DELETE.URL = "data/delete.json";
   API.CREATE.URL = "data/create.json";
   API.UPDATE.URL = "data/update.json";
-  API.EXPIRED.URL = "data/expired.json"
+  API.EXPIRED.URL = "data/expired.json";
 
   API.READ.METHOD = "GET";
   API.DELETE.METHOD = "GET";
@@ -45,7 +44,6 @@ function loadProductList() {
     .then((products) => {
       productList = products;
       displayProductList(products);
-      document.getElementById("showExpired_All").innerHTML = '<button type="button"><i id="showExpired" class="expiredBtn">EXPIRED</i></button>';
     });
 }
 
@@ -53,21 +51,17 @@ function loadExpiredProductList() {
   fetch(API.EXPIRED.URL)
     .then((r) => r.json())
     .then((products) => {
-      expiredList = products;
       displayProductList(products);
-      document.getElementById("showExpired_All").innerHTML = '<button type="button"><i id="showAll" class="allBtn">SHOW ALL</i></button>';
     });
 }
 
 function displayProductList(products) {
   const html = products
     .map((prod) => {
-      // console.info(typeof prod.expiration);
-      // console.warn(typeof prod.weight);
-      // console.error(typeof prod.price);
+      prod.expired ? prod.expired=' id="warning" <span>&#9888;</span' : prod.expired=""
       return `<tr>
         <td>${prod.name}</td>
-        <td>${prod.expiration}</td>
+        <td  ${prod.expired} > ${prod.expiration} </td>
         <td>${prod.weight} g</td>
         <td>${prod.price} RON</td>
         <td>
@@ -130,8 +124,6 @@ document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
 
-// loadProductList();
-
 function deleteTeam(id) {
   fetch(API.DELETE.URL, {
     method: API.DELETE.METHOD,
@@ -163,16 +155,18 @@ document.querySelector('#productList tbody').addEventListener("click", e => {
   }
 });
 
-document.getElementById("showExpired_All").addEventListener("click", e => {
-  if (e.target.matches("i#showExpired.expiredBtn")) {
-    loadExpiredProductList();
-  } else
-    if (e.target.matches("i#showAll.allBtn")) {
-      loadProductList();
-    }
+document.getElementById("expiredButton").addEventListener("click", (e) => {
+  loadExpiredProductList();
+})
+
+
+document.getElementById("allButton").addEventListener("click", (e) => {
+  loadProductList();
 })
 
 loadProductList();
+
+
 
 // to make update function
 //to rename functions to suit project
