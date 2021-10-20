@@ -135,7 +135,6 @@ function deleteTeam(id) {
   })
     .then(r => r.json())
     .then(status => {
-      console.warn("status", status);
       if (status.success) {
         loadProductList();
       }
@@ -146,10 +145,7 @@ document.querySelector('#productList tbody').addEventListener("click", e => {
   if (e.target.matches("a.delete-b")) {
     const id = e.target.getAttribute("data-id");
     deleteTeam(id);
-  }
-});
-
-document.querySelector('#productList tbody').addEventListener("click", e => {
+  } else
   if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
     console.info(id);
