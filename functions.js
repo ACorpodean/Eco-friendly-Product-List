@@ -58,10 +58,11 @@ function loadExpiredProductList() {
 function displayProductList(products) {
   const html = products
     .map((prod) => {
-      prod.expired ? prod.expired=' id="warning" <span>&#9888;</span' : prod.expired=""
+      const expiredCls = prod.expired ? "warning" : "";
+      const expiredImg = prod.expired ? "&#9888;" : "";
       return `<tr>
         <td>${prod.name}</td>
-        <td  ${prod.expired} > ${prod.expiration} </td>
+        <td  class="${expiredCls}"> ${prod.expiration} ${expiredImg}  </td>
         <td>${prod.weight} g</td>
         <td>${prod.price} RON</td>
         <td>
@@ -151,6 +152,7 @@ document.querySelector('#productList tbody').addEventListener("click", e => {
 document.querySelector('#productList tbody').addEventListener("click", e => {
   if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
+    console.info(id);
     //to add update function with id param
   }
 });

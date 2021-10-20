@@ -40,7 +40,7 @@ body::after{
 } */
 
 thead, tbody, tfoot {
-    text-align: center;
+    text-align: right0;
     font-size: 1.1em;
 }
 
@@ -134,6 +134,10 @@ tfoot tr td:nth-last-child(1n){
 }
 
 
-#warning {
-  background-color: red;
+.warning {
+  color : red;
+}
+
+.delete-b,  .edit-b {
+  text-decoration: none;
 }
