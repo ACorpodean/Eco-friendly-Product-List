@@ -141,3 +141,10 @@ tfoot tr td:nth-last-child(1n){
 .delete-b,  .edit-b {
   text-decoration: none;
 }
+
+
+/* e din Bootstrap asta. Daca il stergi atunci ultimul bottom border se face rosu din ceva motiv */
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom-color: white;
+}
