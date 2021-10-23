@@ -3,24 +3,24 @@ let productList = [];
 const API = {
   CREATE: {
     URL: "http://localhost:3000/products/create",
-    METHOD: "POST"
+    METHOD: "POST",
   },
   READ: {
     URL: "http://localhost:3000/products",
-    METHOD: "GET"
+    METHOD: "GET",
   },
   UPDATE: {
     URL: "http://localhost:3000/products/update",
-    METHOD: "PUT"
+    METHOD: "PUT",
   },
   DELETE: {
     URL: "http://localhost:3000/products/delete",
-    METHOD: "DELETE"
+    METHOD: "DELETE",
   },
   EXPIRED: {
     URL: "http://localhost:3000/products/expired",
-    METHOD: "GET"
-  }
+    METHOD: "GET",
+  },
 };
 
 // for demo purposes...
@@ -76,16 +76,16 @@ function displayProductList(products) {
 }
 
 function getProductValuesAsJson() {
-  const name = document.querySelector('[name=name]').value;
-  const expiration = document.querySelector('[name=exp-date]').value;
-  const weight = document.querySelector('[name=weight]').value;
-  const price = document.querySelector('[name=price]').value;
+  const name = document.querySelector("[name=name]").value;
+  const expiration = document.querySelector("[name=exp-date]").value;
+  const weight = document.querySelector("[name=weight]").value;
+  const price = document.querySelector("[name=price]").value;
 
   return {
     name: name,
     expiration: expiration,
     weight: weight,
-    price: price
+    price: price,
   };
 }
 
@@ -93,18 +93,18 @@ function saveProduct(product) {
   fetch(API.CREATE.URL, {
     method: API.CREATE.METHOD,
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(product)
+    body: JSON.stringify(product),
   })
-    .then(r => r.json())
-    .then(status => {
+    .then((r) => r.json())
+    .then((status) => {
       console.warn("status", status);
       if (status.success) {
         loadProductList();
-        document.querySelector('form').reset();
+        document.querySelector("form").reset();
       }
-    })
+    });
 }
 
 function submitProduct() {
@@ -114,7 +114,7 @@ function submitProduct() {
 
 function searchProductNames() {
   const input = document.getElementById("searchinput");
-  const inputvalue = input.value;
+  const inputvalue = input.valuetoLowerCase();
   console.log(input, inputvalue);
   const filtered = productList.filter((product) => {
     return product.name.toLowerCase().includes(inputvalue);
@@ -129,24 +129,23 @@ function deleteTeam(id) {
   fetch(API.DELETE.URL, {
     method: API.DELETE.METHOD,
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id: id })
+    body: JSON.stringify({ id: id }),
   })
-    .then(r => r.json())
-    .then(status => {
+    .then((r) => r.json())
+    .then((status) => {
       if (status.success) {
         loadProductList();
       }
-    })
+    });
 }
 
-document.querySelector('#productList tbody').addEventListener("click", e => {
+document.querySelector("#productList tbody").addEventListener("click", (e) => {
   if (e.target.matches("a.delete-b")) {
     const id = e.target.getAttribute("data-id");
     deleteTeam(id);
-  } else
-  if (e.target.matches("a.edit-b")) {
+  } else if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
     console.info(id);
     //to add update function with id param
@@ -155,20 +154,17 @@ document.querySelector('#productList tbody').addEventListener("click", e => {
 
 document.getElementById("expiredButton").addEventListener("click", (e) => {
   loadExpiredProductList();
-})
-
+});
 
 document.getElementById("allButton").addEventListener("click", (e) => {
   loadProductList();
-})
+});
 
 loadProductList();
-
-
 
 // to make update function
 //to rename functions to suit project
 //database search function
-//database  -api functionality 
+//database  -api functionality
 //interface work / interface api
 //check products expired
