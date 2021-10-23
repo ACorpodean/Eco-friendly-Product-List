@@ -36,8 +36,23 @@ if (location.host === "acorpodean.github.io") {
   API.CREATE.METHOD = "GET";
   API.UPDATE.METHOD = "GET";
   API.EXPIRED.METHOD = "GET";
-}
 
+  function updateTeam(id) {
+    fetch(API.UPDATE.URL, {
+      method: API.UPDATE.METHOD,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id }),
+    })
+      .then((r) => r.json())
+      .then((status) => {
+        if (status.success) {
+          loadProductList();
+        }
+      });
+  }
+  
 function loadProductList() {
   fetch(API.READ.URL)
     .then((r) => r.json())
