@@ -137,63 +137,55 @@ function deleteTeam(id) {
     });
 }
 
-function populateCurrentProduct(id) {
-  var products = productList.find(products => { console.info(id); return products.id === id });
+// function populateCurrentProduct(id) {
+//   var products = productList.find(products => { console.info(id); return products.id === id });
 
-  console.info(id);
+//   console.info(id);
 
-  editId = id;
+//   editId = id;
 
-  const name = document.querySelector("#productList input[name=name]");
-  const expiration = document.querySelector("#productList input[name=exp-date]");
-  const weight = document.querySelector("input[name=weight]");
-  const price = document.querySelector("input[name=price]");
+//   const name = document.querySelector("#productList input[name=name]");
+//   const expiration = document.querySelector("#productList input[name=exp-date]");
+//   const weight = document.querySelector("input[name=weight]");
+//   const price = document.querySelector("input[name=price]");
 
-  name.value = products.name;
-  expiration.value = products.expiration;
-  weight.value = products.weight;
-  price.value = products.price;
-  console.info(products.name, products.expiration, products.weight, products.price)
-}
+//   name.value = products.name;
+//   expiration.value = products.expiration;
+//   weight.value = products.weight;
+//   price.value = products.price;
+//   console.info(products.name, products.expiration, products.weight, products.price)
+// }
 
-function submitProducts() {
-  if (editId) {
-    updateProduct();
-  } else {
-    saveProduct();
-  }
-}
+// function updateProduct() {
+//   const name = document.querySelector("[name=name]").value;
+//   const expiration = document.querySelector("[name=exp-date]").value;
+//   const weight = document.querySelector("[name=weight]").value;
+//   const price = document.querySelector("[name=price]").value;
 
-function updateProduct() {
-  const name = document.querySelector("[name=name]").value;
-  const expiration = document.querySelector("[name=exp-date]").value;
-  const weight = document.querySelector("[name=weight]").value;
-  const price = document.querySelector("[name=price]").value;
+//   const products = {
+//     id: editId,
+//     name,
+//     expiration,
+//     weight,
+//     price
+//   };
+//   console.info('updating...', products, JSON.stringify(products));
 
-  const products = {
-    id: editId,
-    name,
-    expiration,
-    weight,
-    price
-  };
-  console.info('updating...', products, JSON.stringify(products));
-
-  const method = API.UPDATE.METHOD;
-  fetch(API.UPDATE.URL, {
-    method,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: method === "GET" ? null : JSON.stringify(products)
-  })
-    .then(res => res.json())
-    .then(r => {
-      if (r.success) {
-        loadProductList();
-      }
-    });
-}
+//   const method = API.UPDATE.METHOD;
+//   fetch(API.UPDATE.URL, {
+//     method,
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: method === "GET" ? null : JSON.stringify(products)
+//   })
+//     .then(res => res.json())
+//     .then(r => {
+//       if (r.success) {
+//         loadProductList();
+//       }
+//     });
+// }
 
 document.querySelector("#productList tbody").addEventListener("click", (e) => {
   if (e.target.matches("a.delete-b")) {
@@ -235,7 +227,7 @@ function submitProduct() {
 
 function editProduct(id) {
   editID = id;
-  var p = productList.find(prod => prod.id == id);
+  var p = productList.find(prod => prod.id == id );
   populateInputs(p);
 }
 
