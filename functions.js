@@ -176,6 +176,7 @@ document.getElementById("allButton").addEventListener("click", (e) => {
 });
 
 function submitProduct() {
+  //legata din HTML
   const product = getProductValuesAsJson();
   if (editID) {
     product.id = editID;
