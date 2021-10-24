@@ -112,6 +112,18 @@ function getProductValuesAsJson() {
   };
 }
 
+function populateInputs(p) {
+  const name = p.name;
+  const expiration = p.expirationUpdate;
+  const weight = p.weight;
+  const price = p.price;
+
+  document.querySelector("[name=name]").value = name;
+  document.querySelector("[name=exp-date]").value = expiration;
+  document.querySelector("[name=weight]").value = weight;
+  document.querySelector("[name=price]").value = price;
+}
+
 function saveProduct(product) {
   fetch(API.CREATE.URL, {
     method: API.CREATE.METHOD,
@@ -229,18 +241,6 @@ function submitProduct() {
   } else {
     saveProduct(product);
   }
-}
-
-function populateInputs(p) {
-  const name = p.name;
-  const expiration = p.expirationUpdate;
-  const weight = p.weight;
-  const price = p.price;
-
-  document.querySelector("[name=name]").value = name;
-  document.querySelector("[name=exp-date]").value = expiration;
-  document.querySelector("[name=weight]").value = weight;
-  document.querySelector("[name=price]").value = price;
 }
 
 function updateProduct(product) {
