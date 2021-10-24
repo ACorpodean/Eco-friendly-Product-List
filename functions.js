@@ -1,9 +1,5 @@
 let productList = [];
-<<<<<<< HEAD
 let editID;
-=======
-let editId;
->>>>>>> e9a3db9ace3554e8360064980d4d9cb51d0f27df
 
 const API = {
   CREATE: {
@@ -205,14 +201,8 @@ document.querySelector("#productList tbody").addEventListener("click", (e) => {
     deleteTeam(id);
   } else if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
-<<<<<<< HEAD
     console.error(id);
     editProduct(id);
-=======
-    console.info(id);
-    //to add update function with id param
-    populateCurrentProduct(id);
->>>>>>> e9a3db9ace3554e8360064980d4d9cb51d0f27df
   }
 });
 
@@ -233,7 +223,6 @@ loadProductList();
 //interface work / interface api
 //check products expired
 
-<<<<<<< HEAD
 function submitProduct() {
   const product = getProductValuesAsJson();
   if (editID) {
@@ -281,6 +270,4 @@ function updateProduct(product) {
       }
     })
 }
-=======
->>>>>>> e9a3db9ace3554e8360064980d4d9cb51d0f27df
 
