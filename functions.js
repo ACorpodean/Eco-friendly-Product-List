@@ -39,20 +39,19 @@ if (location.host === "acorpodean.github.io") {
   API.EXPIRED.METHOD = "GET";
 }
 
-function loadProductList() {
-  fetch(API.READ.URL)
+function deleteTeam(id) {
+  fetch(API.DELETE.URL, {
+    method: API.DELETE.METHOD,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: id }),
+  })
     .then((r) => r.json())
-    .then((products) => {
-      productList = products;
-      displayProductList(products);
-    });
-}
-
-function loadExpiredProductList() {
-  fetch(API.EXPIRED.URL)
-    .then((r) => r.json())
-    .then((products) => {
-      displayProductList(products);
+    .then((status) => {
+      if (status.success) {
+        loadProductList();
+      }
     });
 }
 
@@ -74,6 +73,29 @@ function displayProductList(products) {
     })
     .join(" ");
   document.querySelector("tbody").innerHTML = html;
+}
+
+function editProduct(id) {
+  editID = id;
+  var p = productList.find((prod) => prod.id == id);
+  populateInputs(p);
+}
+
+function loadProductList() {
+  fetch(API.READ.URL)
+    .then((r) => r.json())
+    .then((products) => {
+      productList = products;
+      displayProductList(products);
+    });
+}
+
+function loadExpiredProductList() {
+  fetch(API.EXPIRED.URL)
+    .then((r) => r.json())
+    .then((products) => {
+      displayProductList(products);
+    });
 }
 
 function getProductValuesAsJson() {
@@ -120,22 +142,6 @@ function searchProductNames() {
 document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
-
-function deleteTeam(id) {
-  fetch(API.DELETE.URL, {
-    method: API.DELETE.METHOD,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id: id }),
-  })
-    .then((r) => r.json())
-    .then((status) => {
-      if (status.success) {
-        loadProductList();
-      }
-    });
-}
 
 // function populateCurrentProduct(id) {
 //   var products = productList.find(products => { console.info(id); return products.id === id });
@@ -225,41 +231,33 @@ function submitProduct() {
   }
 }
 
-function editProduct(id) {
-  editID = id;
-  var p = productList.find(prod => prod.id == id );
-  populateInputs(p);
-}
-
 function populateInputs(p) {
-
   const name = p.name;
   const expiration = p.expirationUpdate;
   const weight = p.weight;
   const price = p.price;
 
-  document.querySelector('[name=name]').value = name;
-  document.querySelector('[name=exp-date]').value = expiration;
-  document.querySelector('[name=weight]').value = weight;
-  document.querySelector('[name=price]').value = price;
+  document.querySelector("[name=name]").value = name;
+  document.querySelector("[name=exp-date]").value = expiration;
+  document.querySelector("[name=weight]").value = weight;
+  document.querySelector("[name=price]").value = price;
 }
 
 function updateProduct(product) {
   fetch(API.UPDATE.URL, {
     method: API.UPDATE.METHOD,
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(product)
+    body: JSON.stringify(product),
   })
-    .then(r => r.json())
-    .then(status => {
+    .then((r) => r.json())
+    .then((status) => {
       console.warn("status", status);
       if (status.success) {
         loadProductList();
-        document.querySelector('form').reset();
+        document.querySelector("form").reset();
         editID = false;
       }
-    })
+    });
 }
-
