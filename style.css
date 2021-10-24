@@ -1,17 +1,23 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    background: #60c5c0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient( #60c5c0, #699b40);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(#05a396, #699b40); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  height: 100%;
+  background: #60c5c0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    #60c5c0,
+    #699b40
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    #05a396,
+    #699b40
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-body::after{
+body::after {
   content: "";
   background: url(background_image.jpg);
   background-repeat: no-repeat;
@@ -23,13 +29,13 @@ body::after{
   right: 0;
   position: fixed;
   max-width: 100%;
-  z-index: -1;   
+  z-index: -1;
 }
 
 .logo {
-    max-width: 30em;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  max-width: 30em;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* h1 {
@@ -39,112 +45,126 @@ body::after{
     margin-bottom: 4rem;
 } */
 
-thead, tbody, tfoot {
-    text-align: right0;
-    font-size: 1.1em;
+thead,
+tbody,
+tfoot {
+  text-align: right0;
+  font-size: 1.1em;
 }
 
 thead {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
-@media only screen and (max-width: 1000px){
-
-    table, thead, tbody, th, td, tr, tfoot, .button{
-     display: block; 
-     position: relative;
-    }
-    
-    .button {
-     margin-left:100px;
-     margin:2px;
-     padding:3px;
-    }
-
-    thead, tbody, tfoot {
-        text-align: start;
-        font-size: 1.1em;
-    }
-    
-    thead tr {
-      display:none
-    };
-                    
-    tr { 
-      border-bottom: 1px solid #ccc; 
-    }
-    
-    td {
-      border: none;
-      border-bottom: 1px solid #eee; 
-      position: relative;
-      padding-left: 50%!important; 
-    }
-    td:before { 
-      position: absolute;
-      top: 3px;
-      left: 6px;
-      padding-right: 10px; 
-      white-space: nowrap;
-      font-weight: bold;
-    }
-    
-    .inputs{
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .inputs-child {
-      display: block;
-    }
-    
-    tbody tr:hover {
-      background-color: transparent;
-    }
-    td:nth-of-type(1):before { content: "Product Name"; }
-    td:nth-of-type(2):before { content: "Expiration Date"; }
-    td:nth-of-type(3):before { content: "Weight"; } 
-    td:nth-of-type(4):before { content: "Price"; }
-    
-
-    input {
-        width: 169px;
-    }
-
-    thead td, tbody td:last-child {
-        display: none;
-    }
-
-    .logo {
-      max-width: 75%;
+@media only screen and (max-width: 1000px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr,
+  tfoot,
+  .button {
+    display: block;
+    position: relative;
   }
 
-  tfoot tr td:last-child{
+  .button {
+    margin-left: 100px;
+    margin: 2px;
+    padding: 3px;
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    text-align: start;
+    font-size: 1.1em;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50% !important;
+  }
+  td:before {
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  .inputs {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .inputs-child {
+    display: block;
+  }
+
+  tbody tr:hover {
+    background-color: transparent;
+  }
+  td:nth-of-type(1):before {
+    content: "Product Name";
+  }
+  td:nth-of-type(2):before {
+    content: "Expiration Date";
+  }
+  td:nth-of-type(3):before {
+    content: "Weight";
+  }
+  td:nth-of-type(4):before {
+    content: "Price";
+  }
+
+  input {
+    width: 169px;
+  }
+
+  thead td,
+  tbody td:last-child {
+    display: none;
+  }
+
+  .logo {
+    max-width: 75%;
+  }
+
+  tfoot tr td:last-child {
     border-bottom: none;
-
   }
 }
 
-@media only screen and (min-width: 1001px){
-
-tfoot tr td:nth-last-child(1n){
-  border-bottom: none;
+@media only screen and (min-width: 1001px) {
+  tfoot tr td:nth-last-child(1n) {
+    border-bottom: none;
   }
-
 }
-
 
 .warning {
-  color : red;
+  color: red;
 }
 
-.delete-b,  .edit-b {
+.delete-b,
+.edit-b {
   text-decoration: none;
 }
 
-
 /* e din Bootstrap asta. Daca il stergi atunci ultimul bottom border se face rosu din ceva motiv */
 
-.table>:not(:last-child)>:last-child>* {
+.table > :not(:last-child) > :last-child > * {
   border-bottom-color: white;
 }

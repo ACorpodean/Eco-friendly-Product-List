@@ -39,7 +39,7 @@ if (location.host === "acorpodean.github.io") {
   API.EXPIRED.METHOD = "GET";
 }
 
-function deleteTeam(id) {
+function deleteProduct(id) {
   fetch(API.DELETE.URL, {
     method: API.DELETE.METHOD,
     headers: {
@@ -90,11 +90,13 @@ function loadProductList() {
     });
 }
 
+loadProductList();
+
 function loadExpiredProductList() {
   fetch(API.EXPIRED.URL)
-    .then((r) => r.json())
+    .then((r) => r.json()) // aici e promisiunea
     .then((products) => {
-      displayProductList(products);
+      displayProductList(products); // aici e rezultat
     });
 }
 
@@ -134,7 +136,6 @@ function saveProduct(product) {
   })
     .then((r) => r.json())
     .then((status) => {
-      console.warn("status", status);
       if (status.success) {
         loadProductList();
         document.querySelector("form").reset();
@@ -143,72 +144,22 @@ function saveProduct(product) {
 }
 
 function searchProductNames() {
-  const input = document.getElementById("searchinput");
-  const inputvalue = input.valuetoLowerCase();
-  console.log(input, inputvalue);
+  const input = document.getElementById("searchinput").value;
+  const inputvalue = input.toLowerCase();
   const filtered = productList.filter((product) => {
     return product.name.toLowerCase().includes(inputvalue);
   });
   displayProductList(filtered);
 }
+
 document.getElementById("searchbutton").addEventListener("click", (e) => {
   searchProductNames();
 });
 
-// function populateCurrentProduct(id) {
-//   var products = productList.find(products => { console.info(id); return products.id === id });
-
-//   console.info(id);
-
-//   editId = id;
-
-//   const name = document.querySelector("#productList input[name=name]");
-//   const expiration = document.querySelector("#productList input[name=exp-date]");
-//   const weight = document.querySelector("input[name=weight]");
-//   const price = document.querySelector("input[name=price]");
-
-//   name.value = products.name;
-//   expiration.value = products.expiration;
-//   weight.value = products.weight;
-//   price.value = products.price;
-//   console.info(products.name, products.expiration, products.weight, products.price)
-// }
-
-// function updateProduct() {
-//   const name = document.querySelector("[name=name]").value;
-//   const expiration = document.querySelector("[name=exp-date]").value;
-//   const weight = document.querySelector("[name=weight]").value;
-//   const price = document.querySelector("[name=price]").value;
-
-//   const products = {
-//     id: editId,
-//     name,
-//     expiration,
-//     weight,
-//     price
-//   };
-//   console.info('updating...', products, JSON.stringify(products));
-
-//   const method = API.UPDATE.METHOD;
-//   fetch(API.UPDATE.URL, {
-//     method,
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: method === "GET" ? null : JSON.stringify(products)
-//   })
-//     .then(res => res.json())
-//     .then(r => {
-//       if (r.success) {
-//         loadProductList();
-//       }
-//     });
-// }
-
 document.querySelector("#productList tbody").addEventListener("click", (e) => {
   if (e.target.matches("a.delete-b")) {
     const id = e.target.getAttribute("data-id");
-    deleteTeam(id);
+    deleteProduct(id);
   } else if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
     console.error(id);
@@ -223,15 +174,6 @@ document.getElementById("expiredButton").addEventListener("click", (e) => {
 document.getElementById("allButton").addEventListener("click", (e) => {
   loadProductList();
 });
-
-loadProductList();
-
-// to make update function
-//to rename functions to suit project
-//database search function
-//database  -api functionality
-//interface work / interface api
-//check products expired
 
 function submitProduct() {
   const product = getProductValuesAsJson();
