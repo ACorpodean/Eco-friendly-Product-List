@@ -162,7 +162,6 @@ document.querySelector("#productList tbody").addEventListener("click", (e) => {
     deleteProduct(id);
   } else if (e.target.matches("a.edit-b")) {
     const id = e.target.getAttribute("data-id");
-    console.error(id);
     editProduct(id);
   }
 });
