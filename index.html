@@ -27,13 +27,19 @@
       <input type="button" class="button" value="Show All" id="allButton" />
     </div>
     <form onsubmit="submitProduct(); return false;">
-      <table id="productList" class="table text-light table-hover responsive">
+      <table id="productList" class="table text-light table-hover">
+        <colgroup>
+          <col span="1">
+          <col span="1" style="max-width: 200px">
+          <col span="1">
+          <col span="1">
+        </colgroup>
         <thead>
-          <th>Product Name</th>
-          <th>Expiration Date</th>
-          <th>Weight (grams)</th>
-          <th>Price (RON)</th>
-          <th></th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Expiration Date</th>
+          <th scope="col">Weight (grams)</th>
+          <th scope="col">Price (RON)</th>
+          <th scope="col"></th>
         </thead>
         <tbody></tbody>
         <tfoot>
