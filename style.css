@@ -76,10 +76,12 @@ thead {
   border-bottom-color: white;
 }
 
-tbody tr td:nth-of-type(5) {
+/* tbody tr td:nth-of-type(5) {
   display: flex;
   flex-direction: row;
-}
+  padding-bottom: -5px;
+  - to fix bottom border column 5 (edit=delete buttons)
+} */
 
 @media only screen and (max-width: 1000px) {
   table,
