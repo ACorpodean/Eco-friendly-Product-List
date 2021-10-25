@@ -41,7 +41,6 @@ body::after {
 thead,
 tbody,
 tfoot {
-  text-align: right0;
   font-size: 1.1em;
 }
 
@@ -79,6 +78,7 @@ thead {
 
 tbody tr td:nth-of-type(5) {
   display: flex;
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -191,6 +191,7 @@ tbody tr td:nth-of-type(5) {
 }
 
 @media only screen and (min-width: 1399px) {
+
   tfoot tr td:nth-last-child(1n) {
     border-bottom: none;
   }
