@@ -1,5 +1,83 @@
-[{"id":7,"name":"varza","expiration":"10-11-2021","expired":1,"weight":"3500","price":"12"},
-    {"id":8,"name":"ardei","expiration":"10-07-2021","expired":1,"weight":"1000","price":"7"},
-    {"id":10,"name":"mazare","expiration":"10-03-2021","expired":1,"weight":"1000","price":"12"},
-    {"id":12,"name":"rosii","expiration":"09-28-2021","expired":1,"weight":"1000","price":"5"}
-]
+[
+    {
+       "id": 22,
+       "name": "Pastarnac",
+       "expiration": "10-21-2021",
+       "expirationUpdate": "2021-10-21",
+       "expired": 1,
+       "weight": "250",
+       "price": "3"
+    },
+    {
+       "id": 24,
+       "name": "Spanac",
+       "expiration": "10-17-2021",
+       "expirationUpdate": "2021-10-17",
+       "expired": 1,
+       "weight": "200",
+       "price": "4.7"
+    },
+    {
+       "id": 27,
+       "name": "Masline",
+       "expiration": "10-10-2021",
+       "expirationUpdate": "2021-10-10",
+       "expired": 1,
+       "weight": "125",
+       "price": "5"
+    },
+    {
+       "id": 29,
+       "name": "Mango",
+       "expiration": "10-21-2021",
+       "expirationUpdate": "2021-10-21",
+       "expired": 1,
+       "weight": "300",
+       "price": "4"
+    },
+    {
+       "id": 31,
+       "name": "Broccoli",
+       "expiration": "10-23-2021",
+       "expirationUpdate": "2021-10-23",
+       "expired": 1,
+       "weight": "420",
+       "price": "6.9"
+    },
+    {
+       "id": 32,
+       "name": "Patrunjel",
+       "expiration": "10-19-2021",
+       "expirationUpdate": "2021-10-19",
+       "expired": 1,
+       "weight": "100",
+       "price": "2"
+    },
+    {
+       "id": 34,
+       "name": "Asparagus",
+       "expiration": "10-22-2021",
+       "expirationUpdate": "2021-10-22",
+       "expired": 1,
+       "weight": "250",
+       "price": "18"
+    },
+    {
+       "id": 37,
+       "name": "Oua",
+       "expiration": "10-25-2021",
+       "expirationUpdate": "2021-10-25",
+       "expired": 1,
+       "weight": "5",
+       "price": "11"
+    },
+    {
+       "id": 42,
+       "name": "Pateu de porc",
+       "expiration": "10-24-2021",
+       "expirationUpdate": "2021-10-24",
+       "expired": 1,
+       "weight": "125",
+       "price": "6.5"
+    }
+ ]
