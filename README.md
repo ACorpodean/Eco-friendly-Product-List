@@ -24,7 +24,7 @@
 
 ##  Requirements for Server Install
 
-Acces link and follow instructions in README file  ([https://github.com/ACorpodean/node-api.git])
+[Acces link and follow instructions in README file](https://github.com/ACorpodean/node-api.git)
 
 
 
