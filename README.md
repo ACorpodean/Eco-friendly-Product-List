@@ -24,10 +24,8 @@
 
 ##  Requirements for Server Install
 
-
-```sh
 [Acces link and follow instructions in README file](https://github.com/ACorpodean/node-api.git)
-```
+
 
 
 
