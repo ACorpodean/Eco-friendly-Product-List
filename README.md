@@ -8,33 +8,27 @@
 ## Live Preview
 - [Demo](https://acorpodean.github.io/Food-Waste-Planner/)
 
-## TODO
-- [x] create a table in HTMLs
-- [x] design and structure in CSS
-- [x] table headers-[Product Name, Weight, Expiration Date, Price]
-- [ ] add a JSON file with products
-- [ ] add a JSON file with recipes
 
 ## FEATURES
 
-- [ ] Main screen displaying all products, those that are soon to expire having a red background
-- [ ] Search for products
-- [x] Add Product with name, weight, date, price 
-- [ ] Delete button
-- [ ] Edit button
+- [x] Main screen displaying all products, those that are soon to expire having a red expiration date and warning icon
+- [x] Search for products on click of search button -> search will display expired + nonExpired products
+     Search will return only for Name of Product results
+- [x] Add Product with name, weight, date, price - onSubmit and onClick  
+     delete + update button generated from JS
+- [x] Delete products
+- [x] Update products
+- [x] You can filter all products to display only Expired products from DataBase on Expired button click
+- [x] You can display All products from DataBase on ShowAll button click
+- [x] Demo functionality on gitHub will display data stored locally on FileSystem
+- [ ] 
 
-## Install Server Side
+##  Requirements for Server Install
 
-```sh
-git clone https://github.com/ACorpodean/node-api.git food-waste-planner-api
-cd node-api
-npm install
-```
+[Acces link and follow instructions in README file](https://github.com/ACorpodean/node-api.git)
 
-## JS Usage
 
-```sh
-npm run devstart
-```
+
+
 
 
