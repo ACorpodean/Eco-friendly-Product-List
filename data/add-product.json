@@ -1,5 +1,227 @@
 [
     {
-        "succes":true
+       "id": 19,
+       "name": "Rosii",
+       "expiration": "10-30-2021",
+       "expirationUpdate": "2021-10-30",
+       "expired": 0,
+       "weight": "2500",
+       "price": "15"
+    },
+    {
+       "id": 20,
+       "name": "Ardei",
+       "expiration": "11-04-2021",
+       "expirationUpdate": "2021-11-04",
+       "expired": 0,
+       "weight": "1000",
+       "price": "8"
+    },
+    {
+       "id": 21,
+       "name": "Orez",
+       "expiration": "05-20-2022",
+       "expirationUpdate": "2022-05-20",
+       "expired": 0,
+       "weight": "5000",
+       "price": "30"
+    },
+    {
+       "id": 22,
+       "name": "Pastarnac",
+       "expiration": "10-21-2021",
+       "expirationUpdate": "2021-10-21",
+       "expired": 1,
+       "weight": "250",
+       "price": "3"
+    },
+    {
+       "id": 23,
+       "name": "Varza",
+       "expiration": "11-03-2021",
+       "expirationUpdate": "2021-11-03",
+       "expired": 0,
+       "weight": "2375",
+       "price": "17"
+    },
+    {
+       "id": 24,
+       "name": "Spanac",
+       "expiration": "10-17-2021",
+       "expirationUpdate": "2021-10-17",
+       "expired": 1,
+       "weight": "200",
+       "price": "4.7"
+    },
+    {
+       "id": 25,
+       "name": "Cartofi",
+       "expiration": "11-14-2021",
+       "expirationUpdate": "2021-11-14",
+       "expired": 0,
+       "weight": "8000",
+       "price": "24"
+    },
+    {
+       "id": 26,
+       "name": "Usturoi",
+       "expiration": "11-06-2021",
+       "expirationUpdate": "2021-11-06",
+       "expired": 0,
+       "weight": "285",
+       "price": "11"
+    },
+    {
+       "id": 27,
+       "name": "Masline",
+       "expiration": "10-10-2021",
+       "expirationUpdate": "2021-10-10",
+       "expired": 1,
+       "weight": "125",
+       "price": "5"
+    },
+    {
+       "id": 28,
+       "name": "Linte",
+       "expiration": "12-25-2021",
+       "expirationUpdate": "2021-12-25",
+       "expired": 0,
+       "weight": "1000",
+       "price": "12"
+    },
+    {
+       "id": 29,
+       "name": "Mango",
+       "expiration": "10-21-2021",
+       "expirationUpdate": "2021-10-21",
+       "expired": 1,
+       "weight": "300",
+       "price": "4"
+    },
+    {
+       "id": 30,
+       "name": "Carne porc",
+       "expiration": "10-29-2021",
+       "expirationUpdate": "2021-10-29",
+       "expired": 0,
+       "weight": "1700",
+       "price": "28"
+    },
+    {
+       "id": 31,
+       "name": "Broccoli",
+       "expiration": "10-23-2021",
+       "expirationUpdate": "2021-10-23",
+       "expired": 1,
+       "weight": "420",
+       "price": "6.9"
+    },
+    {
+       "id": 32,
+       "name": "Patrunjel",
+       "expiration": "10-19-2021",
+       "expirationUpdate": "2021-10-19",
+       "expired": 1,
+       "weight": "100",
+       "price": "2"
+    },
+    {
+       "id": 33,
+       "name": "Ceapa",
+       "expiration": "10-30-2021",
+       "expirationUpdate": "2021-10-30",
+       "expired": 0,
+       "weight": "1050",
+       "price": "6"
+    },
+    {
+       "id": 34,
+       "name": "Asparagus",
+       "expiration": "10-22-2021",
+       "expirationUpdate": "2021-10-22",
+       "expired": 1,
+       "weight": "250",
+       "price": "18"
+    },
+    {
+       "id": 35,
+       "name": "Sare",
+       "expiration": "03-23-2023",
+       "expirationUpdate": "2023-03-23",
+       "expired": 0,
+       "weight": "500",
+       "price": "8"
+    },
+    {
+       "id": 36,
+       "name": "Spaghete",
+       "expiration": "02-04-2022",
+       "expirationUpdate": "2022-02-04",
+       "expired": 0,
+       "weight": "1000",
+       "price": "6"
+    },
+    {
+       "id": 37,
+       "name": "Oua",
+       "expiration": "10-25-2021",
+       "expirationUpdate": "2021-10-25",
+       "expired": 1,
+       "weight": "5",
+       "price": "11"
+    },
+    {
+       "id": 38,
+       "name": "Sunca",
+       "expiration": "10-26-2021",
+       "expirationUpdate": "2021-10-26",
+       "expired": 0,
+       "weight": "350",
+       "price": "19"
+    },
+    {
+       "id": 39,
+       "name": "Iaurt",
+       "expiration": "10-27-2021",
+       "expirationUpdate": "2021-10-27",
+       "expired": 0,
+       "weight": "400",
+       "price": "25"
+    },
+    {
+       "id": 40,
+       "name": "Lapte",
+       "expiration": "10-30-2021",
+       "expirationUpdate": "2021-10-30",
+       "expired": 0,
+       "weight": "1000",
+       "price": "7"
+    },
+    {
+       "id": 41,
+       "name": "Piept de pui",
+       "expiration": "11-10-2021",
+       "expirationUpdate": "2021-11-10",
+       "expired": 0,
+       "weight": "1850",
+       "price": "23"
+    },
+    {
+       "id": 42,
+       "name": "Pateu de porc",
+       "expiration": "10-24-2021",
+       "expirationUpdate": "2021-10-24",
+       "expired": 1,
+       "weight": "125",
+       "price": "6.5"
+    },
+    {
+       "id": 43,
+       "name": "Ridichi",
+       "expiration": "11-02-2021",
+       "expirationUpdate": "2021-11-02",
+       "expired": 0,
+       "weight": "2800",
+       "price": "11"
     }
-]
+ ]
