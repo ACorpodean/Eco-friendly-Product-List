@@ -33,17 +33,10 @@ body::after {
 }
 
 .logo {
-  max-width: 30em;
+  max-width: 20em;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
-
-/* h1 {
-    text-align: center;
-    color: white;
-    font-weight: bolder;
-    margin-bottom: 4rem;
-} */
 
 thead,
 tbody,
@@ -54,6 +47,38 @@ tfoot {
 
 thead {
   font-size: 1.3rem;
+}
+
+.warning {
+  color: red;
+}
+
+#expiredButton, #allButton {
+  color: white;
+  background-color: inherit;
+  border: 0.1rem solid white;
+}
+
+#expiredButton:hover, #allButton:hover {
+  background-color: #64af64;
+}
+
+#expiredButton:active, #allButton:active {
+  color: #bce2a3;
+  border-color: #bce2a3;
+}
+
+.delete-b,
+.edit-b {
+  text-decoration: none;
+}
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: white;
+}
+
+tbody tr td:nth-of-type(5) {
+  display: flex;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -68,7 +93,7 @@ thead {
     display: block;
     position: relative;
   }
-
+  
   .button {
     margin-left: 100px;
     margin: 2px;
@@ -136,7 +161,7 @@ thead {
 
   thead td,
   tbody td:last-child {
-    display: none;
+    display: block;
   }
 
   .logo {
@@ -146,25 +171,41 @@ thead {
   tfoot tr td:last-child {
     border-bottom: none;
   }
+
+  .top-buttons {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media only screen and (min-width: 1001px) {
   tfoot tr td:nth-last-child(1n) {
     border-bottom: none;
   }
+
+  tbody tr td:nth-of-type(3), tbody tr td:nth-of-type(4) {
+    text-align: right;
+    padding-right: 9rem;
+    }
+
 }
 
-.warning {
-  color: red;
+@media only screen and (min-width: 1399px) {
+  tfoot tr td:nth-last-child(1n) {
+    border-bottom: none;
+  }
+
+  tbody tr td:nth-of-type(3) {
+    text-align: right;
+    padding-right: 10rem;
+    }
+
+  tbody tr td:nth-of-type(4) {
+    text-align: right;
+    padding-right: 12rem;
+    }
 }
 
-.delete-b,
-.edit-b {
-  text-decoration: none;
-}
 
-/* e din Bootstrap asta. Daca il stergi atunci ultimul bottom border se face rosu din ceva motiv */
 
-.table > :not(:last-child) > :last-child > * {
-  border-bottom-color: white;
-}
+

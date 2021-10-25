@@ -1,91 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Waste Planner</title>
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="bootstrap-5.1.1-dist/css/bootstrap-grid.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="fontawesome/a076d05399.js"></script>
-  </head>
 
-  <body>
-    <div class="container-lg d-flex flex-column">
-      <div class="container-log d-flex justify-content-center">
-        <img src="logo.png" alt="logo" class="img-fluid logo" />
-      </div>
-      <div class="container">
-        <button type="buttons">
-          <i id="searchbutton" class="fas fa-search"></i>
-        </button>
-        <input
-          type="text"
-          id="searchinput"
-          name="search"
-          placeholder="Search"
-        />
-        <input
-          type="button"
-          class="button"
-          value="Expired"
-          id="expiredButton"
-        />
-        <input type="button" class="button" value="ShowAll" id="allButton" />
-      </div>
-      <form onsubmit="submitProduct(); return false;">
-        <table id="productList" class="table text-light table-hover responsive">
-          <thead>
-            <th>Product Name</th>
-            <th>Expiration Date</th>
-            <th>Weight(grams)</th>
-            <th>Price(RON)</th>
-            <th></th>
-          </thead>
-          <tbody></tbody>
-          <tfoot>
-            <tr>
-              <td>
-                <input
-                  type="text"
-                  required
-                  name="name"
-                  placeholder="Product Name"
-                />
-              </td>
-              <td>
-                <input
-                  type="date"
-                  required
-                  name="exp-date"
-                  placeholder="Expiration Date"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  required
-                  name="weight"
-                  placeholder="Weight"
-                />
-              </td>
-              <td>
-                <input type="text" required name="price" placeholder="Price" />
-              </td>
-              <td>
-                <button type="submit"><i class="fas fa-save"></i></button>
-                <button type="reset"><i class="fas fa-undo"></i></button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Waste Planner</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap-5.1.1-dist/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="fontawesome/a076d05399.js"></script>
+</head>
+
+<body>
+  <div class="container-lg d-flex flex-column">
+    <div class="container-log d-flex justify-content-center">
+      <img src="logo.png" alt="logo" class="img-fluid logo" />
     </div>
-    <script src="functions.js"></script>
-  </body>
+    <div class="container top-buttons">
+      <button type="buttons">
+        <i id="searchbutton" class="fas fa-search"></i>
+      </button>
+      <input type="text" id="searchinput" name="search" placeholder="Search" />
+      <input type="button" class="button" value="Expired" id="expiredButton" />
+      <input type="button" class="button" value="Show All" id="allButton" />
+    </div>
+    <form onsubmit="submitProduct(); return false;">
+      <table id="productList" class="table text-light table-hover responsive">
+        <thead>
+          <th>Product Name</th>
+          <th>Expiration Date</th>
+          <th>Weight (grams)</th>
+          <th>Price (RON)</th>
+          <th></th>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <input type="text" required name="name" placeholder="Product Name" />
+            </td>
+            <td>
+              <input type="date" required name="exp-date" placeholder="Expiration Date" />
+            </td>
+            <td>
+              <input type="text" required name="weight" placeholder="Weight" />
+            </td>
+            <td>
+              <input type="text" required name="price" placeholder="Price" />
+            </td>
+            <td>
+              <button type="submit"><i class="fas fa-save"></i></button>
+              <button type="reset"><i class="fas fa-undo"></i></button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
+  </div>
+  <script src="functions.js"></script>
+</body>
+
 </html>
