@@ -21,12 +21,16 @@
 - [x] You can filter all products to display only Expired products from DataBase on Expired button click
 - [x] You can display All products from DataBase on ShowAll button click
 - [x] Demo functionality on gitHub will display data stored locally on FileSystem
-- [ ] 
 
-##  Requirements for Server Install
+##  Requirements for server install
 
 [Acces link and follow instructions in README file](https://github.com/ACorpodean/node-api.git)
 
+## How to start app
+
+- Open food-waste-planner-ui folder in Visual Studio Code
+- Press Ctrl+Shit+P, then choose "Browser Sync: Server mode in browser"
+- Finally, press \*\*/\*.\*
 
 
 
