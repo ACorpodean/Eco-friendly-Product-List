@@ -150,6 +150,7 @@ function searchProductNames() {
     return product.name.toLowerCase().includes(inputvalue);
   });
   displayProductList(filtered);
+  document.getElementById("searchinput").value = '';
 }
 
 document.getElementById("searchbutton").addEventListener("click", (e) => {
