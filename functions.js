@@ -81,8 +81,13 @@ function editProduct(id) {
   populateInputs(p);
 }
 
-function loadProductList() {
-  fetch(API.READ.URL)
+function loadProducts(url,params) {
+  // TODO add params-dex team project
+  fetch(url + '?' + new URLSearchParams( params ).toString(), {
+    headers: {
+      "Content-Type": "application/json",
+    }
+  })
     .then((r) => r.json())
     .then((products) => {
       productList = products;
@@ -90,15 +95,15 @@ function loadProductList() {
     });
 }
 
-loadProductList();
-
-function loadExpiredProductList() {
-  fetch(API.EXPIRED.URL)
-    .then((r) => r.json()) // aici e promisiunea
-    .then((products) => {
-      displayProductList(products); // aici e rezultat
-    });
+function loadProductList() {
+  loadProducts(API.READ.URL, {})
 }
+
+function loadExpiredProductList(expiration) {
+  loadProducts(API.READ.URL,{expireDate:expiration})
+}
+
+loadProductList();
 
 function getProductValuesAsJson() {
   const name = document.querySelector("[name=name]").value;
@@ -167,12 +172,17 @@ document.querySelector("#productList tbody").addEventListener("click", (e) => {
   }
 });
 
-document.getElementById("expiredButton").addEventListener("click", (e) => {
-  loadExpiredProductList();
-});
-
-document.getElementById("allButton").addEventListener("click", (e) => {
-  loadProductList();
+document.querySelector(".top-buttons").addEventListener("click", (e) => {
+  if (e.target.matches("input.filter")) {
+    const days = e.target.getAttribute("data-id")
+    console.info("data id", days);
+    if (days) {
+      const expirationDays = addDays(new Date(), days).toISOString().split("T")[0]
+      loadExpiredProductList(expirationDays);
+    } else {
+      loadProductList();
+    }
+  }
 });
 
 function submitProduct() {
@@ -203,4 +213,10 @@ function updateProduct(product) {
         editID = false;
       }
     });
+}
+
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
 }

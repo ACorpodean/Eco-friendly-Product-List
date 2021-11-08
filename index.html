@@ -23,8 +23,10 @@
         <i id="searchbutton" class="fas fa-search"></i>
       </button>
       <input type="text" id="searchinput" name="search" placeholder="Search" />
-      <input type="button" class="button" value="Expired" id="expiredButton" />
-      <input type="button" class="button" value="Show All" id="allButton" />
+      <input type="button" class="button filter" value="Expired" data-id="0"/>
+      <input type="button" class="button filter" value="ExpiredNextWeek" data-id="7"/>
+      <input type="button" class="button filter" value="ExpiredInTwoWeeks" data-id="14"/>
+      <input type="button" class="button filter" value="Show All" id="allButton" />
     </div>
     <form onsubmit="submitProduct(); return false;">
       <table id="productList" class="table text-light table-hover">
