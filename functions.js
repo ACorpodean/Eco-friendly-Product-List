@@ -82,6 +82,7 @@ function editProduct(id) {
 }
 
 function loadProducts(url,params) {
+  // console.warn(new URLSearchParams( params ).toString());
   // TODO add params-dex team project
   fetch(url + '?' + new URLSearchParams( params ).toString(), {
     headers: {
@@ -100,6 +101,7 @@ function loadProductList() {
 }
 
 function loadExpiredProductList(expiration) {
+  console.log(expiration);
   loadProducts(API.READ.URL,{expireDate:expiration})
 }
 
@@ -175,9 +177,11 @@ document.querySelector("#productList tbody").addEventListener("click", (e) => {
 document.querySelector(".top-buttons").addEventListener("click", (e) => {
   if (e.target.matches("input.filter")) {
     const days = e.target.getAttribute("data-id")
-    console.info("data id", days);
+    // console.error("data id", days);
     if (days) {
-      const expirationDays = addDays(new Date(), days).toISOString().split("T")[0]
+      // console.warn("inside if",days, days * 1);
+      const expirationDays = addDays(new Date(), days * 1).toISOString().split("T")[0]
+      console.log("expiration", expirationDays )
       loadExpiredProductList(expirationDays);
     } else {
       loadProductList();
