@@ -176,11 +176,11 @@ document.querySelector("#productList tbody").addEventListener("click", (e) => {
 
 document.querySelector(".top-buttons").addEventListener("click", (e) => {
   if (e.target.matches("input.filter")) {
-    const days = e.target.getAttribute("data-id")
+    const days = Number(e.target.getAttribute("data-id"))
     // console.error("data id", days);
     if (days) {
       // console.warn("inside if",days, days * 1);
-      const expirationDays = addDays(new Date(), days * 1).toISOString().split("T")[0]
+      const expirationDays = addDays(new Date(), days).toISOString().split("T")[0]
       console.log("expiration", expirationDays )
       loadExpiredProductList(expirationDays);
     } else {
